@@ -1,0 +1,153 @@
+<!DOCTYPE Html>
+<Html Lang="En">
+
+<Head>
+  <Meta Charset="UTF-8" />
+  <Title>Personal Portfolio Website</Title>
+  <!----CSS Link----->
+  <Link Rel="Stylesheet" Href="Style.Css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</Head>
+
+<Body>
+  <div Class="container">
+
+    <!-- this is section of home -->
+
+    <section class="Home" id="Home">
+      <Nav>
+        <Ul>
+          <Li><A Href="#Home">Home</A></Li>
+          <Li><A Href="#About">About</A></Li>
+          <Li><A Href="#projects">projects</A> </Li>
+          <Li><A Href="#Contact">Contact</A></Li>
+        </Ul>
+        <A Href="resume/Abhay Kumar (1).pdf" Class="Btn" target="blank">Resume </A>
+      </Nav>
+
+      <div Class="Content">
+        <img src="image/cover photo1.jpg" alt="">
+
+        <H1>Hello, I’m <Span>Abhay</Span></H1>
+
+
+        <P>
+          I’m hard Working engineering graduate, specialised in computer
+          science engineering with an overall cgpa of 7.0.
+
+        </P>
+
+      </div>
+  </div>
+  </section>
+
+
+
+  <!-- this is section of about -->
+
+
+  <section class="About" id="About">
+    <h2 class="about1">About <span>Me</span> </h2>
+    <div class="main">
+      <p>My name is Abhay kumar,I was born in Bihar. </p>
+      <p>I'm an Btech student at computer science department . </p>
+      <p>i have done 10th form GSVM high school (pachrukhi) with 73% of marks</p>
+      <p>and 12th form DAV pg college (Siwan) with 68% of marks.</p>
+      <p>I did Btech from Aravali college of engineering and management (Faridabad,Haryana).</p>
+      <p>i like to play volleyball and listening to music</p>
+    </div>
+  </section>
+
+
+  <!-- this is section of projects -->
+
+  <section class="projects" id="projects">
+    <h3>Projects</h3>
+
+    <ul>
+      <li>1. E-commerce site
+        <p>Discription:- <br>- This project took one month to complete <br>- In this we are four group of student and we
+          made this for learning purpose<br>- My role is making the frontend of this project <br>- we use
+          HTML,css,javascript ,php for making this project <br>- we use vs code software </p>
+      </li>
+      <li>2. weather app
+
+        <p>Discription:- <br>- This project took one and a half month to complete <br>- In this we are three group of
+          student and we
+          <br>- My role is making some part of front-end of this project <br>- we use
+          HTML,css,javascript ,mern stack for making this project <br>- we use rapid api to fetch the weather data from
+          online
+        </p>
+
+      </li>
+    </ul>
+
+
+  </section>
+
+
+  <!-- this is section of conatact -->
+
+  <section class="Contact" id="Contact">
+    <form name="submit-to-google-sheet">
+      <h4>Contact us</h4>
+      <p>we are happy to answer any question you have
+        or provide you with an estimate.Just send us a message in the from below with any question you may have.
+      </p>
+      <p> Your Name:
+        <input type="text" name="Name" required>
+      </p>
+      <p>Your email:
+        <input type="email" name="Email"  required>
+      </p>
+
+      <p>Subject:
+        <input type="text" name="Subject"  required>
+      </p>
+      <p>Your message:
+        <textarea name="message"  cols="30" rows="10" required></textarea>
+      </p>
+      <button type="submit" class="btn btn2">Submit</button>
+    </form>
+    <span id="msg"></span>
+
+  </section>
+
+
+  <!-- footer section -->
+
+  <footer>
+    <div class="smhandle">
+      <a href="mailto: kabhay97852@gmail.com" target="blank"><i class="fa fa-envelope email_handle fa-lg"
+          aria-hidden="true"></i>E-mail</a>
+      <a href="https://www.instagram.com/its__abhay0011/" target="blank"><i class="fa fa-instagram instagram_handle fa-lg"></i>Instagram</a>
+      <a href="https://www.linkedin.com/in/abhay-prajapati-a07bb9222/" target="blank"><i class="fa fa-linkedin linkedin_handle fa-lg"></i>LinkedIn </a>
+    </div>
+  </footer>
+
+
+
+  
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwcanoRFLQfdWgTlOkLtei_BbdHjrXtZgMk0C3xrMpfJmA8eadsZ2n--khq3kCU_O3e/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg")
+  
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+        msg.innerHTML="Message sent successfully"
+        setTimeout(function(){
+          msg.innerHTML=""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+</Body>
+
+</Html>
